@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: myWebsite
+name: my_website
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -28,6 +28,6 @@ jobs:
       with:
         node-version: 12
     - name: Install Surge
-      run: npm install -g surge
+      run: npm install -global surge
     - name: Surge
-      run: surge ./ mywebsite.surge.sh --token ${{secrets.surge_token}}
+      run: surge ./ mywebsite.surge.sh --token ${{secrets.SURGE_TOKEN}}
